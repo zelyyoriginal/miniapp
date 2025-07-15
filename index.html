@@ -80,11 +80,14 @@
      const = linq = `https://docs.google.com/forms/d/e/1FAIpQLSeL_VnqJZPlmI6Xb9wYUvAx9Ytz5nm6P6GNG6yaaPDi5uplfA/viewform`;
     // Ссылка на форму с подставленным профилем
      const formUrl = `${formBaseUrl}?usp=pp_url&${entryId}=${encodeURIComponent(profileLink)}`;
+       document.getElementById('orderButton').onclick = function() {
+      window.location.href = formUrl;
+    };
   </script>
   <div class="buttons">
     <button onclick="window.location.href='https://t.me/your_channel'">Приобрести подписку на канал</button>
     <button onclick="window.location.href='https://t.me/your_ai_bot'">Попробовать ИИ</button>
-    <button onclick="window.location.href = formUrl">Заказать работу мастера</button>
+    <button id="orderButton">Заказать работу мастера</button>
   </div>
 </body>
 </html>
