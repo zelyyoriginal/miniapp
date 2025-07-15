@@ -69,13 +69,22 @@
   <div class="buttons">
     <button onclick="window.location.href='https://t.me/your_channel'">Приобрести подписку на канал</button>
     <button onclick="window.location.href='https://t.me/your_ai_bot'">Попробовать ИИ</button>
-    <button id="orderButton">Заказать работу мастера</button>
+    <button onclick="window.location.href=formBaseUrl">Заказать работу мастера</button>
+    <button id = 'orderButton'> формы с подстановкой константы </button>
   </div>
+
+<script>
+ //  const formBaseUrl = 'https://forms.gle/nAmMAaZJnxxZvnrDA';
+
+</script>
+
 
   <script>
     // Получаем данные из Telegram WebApp
     const tg = window.Telegram.WebApp;
     const username = tg.initDataUnsafe.username;
+
+  // const username = 'Zelyyzevaxa'
 
     // Делаем ссылку на профиль
     const profileLink = `https://t.me/${username}`;
@@ -88,10 +97,10 @@
 
     // Ссылка на форму с подставленным профилем
     const formUrl = `${formBaseUrl}?usp=pp_url&${entryId}=${encodeURIComponent(profileLink)}`;
-
+     
     document.getElementById('orderButton').onclick = function() {
       window.location.href = formUrl;
     };
-  </script>
+  </script> 
 </body>
 </html>
