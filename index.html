@@ -66,7 +66,13 @@
   <p>Здесь вы можете оформить подписку, попробовать искусственный интеллект или заказать работу у мастера.</p>
   <img src="https://cdn.7days.ru/pic/d6c/58D87D092F183AF2C3257752002F7313/110445/104.jpg" alt="Фото">
 
-   <script>
+  <div class="buttons">
+    <button onclick="window.location.href='https://t.me/your_channel'">Приобрести подписку на канал</button>
+    <button onclick="window.location.href='https://t.me/your_ai_bot'">Попробовать ИИ</button>
+    <button id="orderButton">Заказать работу мастера</button>
+  </div>
+
+  <script>
     // Получаем данные из Telegram WebApp
     const tg = window.Telegram.WebApp;
     const username = tg.initDataUnsafe.username;
@@ -75,19 +81,17 @@
     const profileLink = `https://t.me/${username}`;
 
     // ID поля в Google Form, которое нужно предзаполнить
-    const entryId = 'entry.1771687770';  // <-- тут впиши свой настоящий ID
+    const entryId = 'entry.1771687770';  // <-- твой настоящий ID
 
-     const = linq = `https://docs.google.com/forms/d/e/1FAIpQLSeL_VnqJZPlmI6Xb9wYUvAx9Ytz5nm6P6GNG6yaaPDi5uplfA/viewform`;
+    // Ссылка на форму
+    const formBaseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeL_VnqJZPlmI6Xb9wYUvAx9Ytz5nm6P6GNG6yaaPDi5uplfA/viewform';
+
     // Ссылка на форму с подставленным профилем
-     const formUrl = `${formBaseUrl}?usp=pp_url&${entryId}=${encodeURIComponent(profileLink)}`;
-       document.getElementById('orderButton').onclick = function() {
+    const formUrl = `${formBaseUrl}?usp=pp_url&${entryId}=${encodeURIComponent(profileLink)}`;
+
+    document.getElementById('orderButton').onclick = function() {
       window.location.href = formUrl;
     };
   </script>
-  <div class="buttons">
-    <button onclick="window.location.href='https://t.me/your_channel'">Приобрести подписку на канал</button>
-    <button onclick="window.location.href='https://t.me/your_ai_bot'">Попробовать ИИ</button>
-    <button id="orderButton">Заказать работу мастера</button>
-  </div>
 </body>
 </html>
