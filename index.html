@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini App Example</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+    #photo, #screen2 { display: none; }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    img { max-width: 100%; height: auto; border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Добро пожаловать!</h1>
+  
+  <div id="screen1">
+    <button onclick="showPhoto()">Смотреть фото</button>
+  </div>
+
+  <div id="photo">
+    <img src="https://placekitten.com/400/300" alt="Фото котика" />
+    <button onclick="goToScreen2()">Дальше</button>
+  </div>
+
+  <div id="screen2">
+    <p>Это второй экран, здесь может быть текст или кнопка.</p>
+    <button onclick="backToStart()">В начало</button>
+  </div>
+
+  <script>
+    function showPhoto() {
+      document.getElementById('screen1').style.display = 'none';
+      document.getElementById('photo').style.display = 'block';
+    }
+
+    function goToScreen2() {
+      document.getElementById('photo').style.display = 'none';
+      document.getElementById('screen2').style.display = 'block';
+    }
+
+    function backToStart() {
+      document.getElementById('screen2').style.display = 'none';
+      document.getElementById('screen1').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
