@@ -76,8 +76,8 @@
 
   if (window.Telegram && window.Telegram.WebApp) {
     Telegram.WebApp.ready(); // сообщаем Telegram, что мы готовы
-    if (Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.username) {
-      username = Telegram.WebApp.initDataUnsafe.username;
+    if (Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.user.username) {
+      username = Telegram.WebApp.initDataUnsafe.user.username;
     } else {
       console.log('username не получен из initDataUnsafe');
     }
