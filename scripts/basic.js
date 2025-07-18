@@ -38,7 +38,15 @@
   pages.forEach(id => {
     document.getElementById(id).style.display = (id === pageId) ? 'block' : 'none';
   });
+  Telegram.WebApp.BackButton.show();
 }
+
+Telegram.WebApp.BackButton.onClick(() => {
+  // вернись на предыдущую "страницу" SPA
+  showPage(pages[0])
+  Telegram.WebApp.BackButton.hide(); // и спрячь кнопку обратно
+});
+
 
 // Пример переключения
 document.getElementById('someButton').addEventListener('click', () => {
