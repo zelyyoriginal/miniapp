@@ -43,7 +43,7 @@
 
 Telegram.WebApp.BackButton.onClick(() => {
   // вернись на предыдущую "страницу" SPA
-  showPage(pages[0])
+  showPage('mainPage');
   Telegram.WebApp.BackButton.hide(); // и спрячь кнопку обратно
 });
 
