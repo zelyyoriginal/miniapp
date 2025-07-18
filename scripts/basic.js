@@ -28,8 +28,8 @@
    const formUrl = `${formBaseUrl}?usp=pp_url&${entryId}=${encodeURIComponent(profileLink)}`;
    
    function goToForm(){
-     window.location.href = formUrl;
-    // window.open(formUrl,'_blank');
+    // window.location.href = formUrl;
+     window.open(formUrl,'_blank');
     }
     
     
