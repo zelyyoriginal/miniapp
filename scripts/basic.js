@@ -29,7 +29,21 @@
    
    function goToForm(){
     // window.location.href = formUrl;
-     window.open(formUrl,'_blank');
+    window.open(formUrl,'_blank');
+     
     }
+
+    function showPage(pageId) {
+  const pages = ['mainPage', 'rewiewsPage'];
+  pages.forEach(id => {
+    document.getElementById(id).style.display = (id === pageId) ? 'block' : 'none';
+  });
+}
+
+// Пример переключения
+document.getElementById('someButton').addEventListener('click', () => {
+  showPage('formPage');
+});
+
     
     
