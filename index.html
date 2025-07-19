@@ -79,8 +79,8 @@
     padding: 12px 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #2575fc;
-    background: #fff;
+    background: var(--tg-theme-button-color, #ecd9d9);
+    color: var(--tg-theme-text-color, #000000);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -144,11 +144,11 @@
   }
 
   .accordion-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(119, 118, 118, 0.212);
   }
 
   .accordion-header {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--tg-theme-bg-color, rgba(84, 25, 139, 0.418));
     padding: 14px 20px;
     cursor: pointer;
     display: flex;
@@ -164,7 +164,7 @@
 
   .accordion-content {
     padding: 12px 20px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--tg-theme-secondary-bg-color, rgba(14, 68, 104, 0.123));
     display: none;
     text-align: left;
     font-size: 0.95em;
@@ -371,24 +371,37 @@
 
 </div>
   <div id="servicesPage" style="display: none;">
+    
+    <h2>Каталог услуг</h2>
     <div class="accordion">
-
-  <div class="accordion-item">
-    <div class="accordion-header">1) Автоматизировать соцсети</div>
+    <div class="accordion-item">
+    <div class="accordion-header">Автоматизировать соцсети</div>
     <div class="accordion-content">
       Мы можем настроить воронку из Инстаграма в платный канал, автоответы на комментарии и сообщения.
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">2) Заказать поздравительный ролик</div>
+    <div class="accordion-header">Заказать поздравительный ролик</div>
     <div class="accordion-content">
       Яркий ролик по вашим фото и тексту, озвучка голосом или ИИ, быстрая доставка в любом формате.
     </div>
   </div>
 
   <div class="accordion-item">
-    <div class="accordion-header">3) Рекламный ролик на билборды</div>
+    <div class="accordion-header">Рекламный ролик на билборды</div>
+    <div class="accordion-content">
+      Короткие 30–60 сек. клипы под экраны или наружную рекламу. Работаем под ТЗ или "под ключ".
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">Рекламный ролик на билборды</div>
+    <div class="accordion-content">
+      Короткие 30–60 сек. клипы под экраны или наружную рекламу. Работаем под ТЗ или "под ключ".
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">Рекламный ролик на билборды</div>
     <div class="accordion-content">
       Короткие 30–60 сек. клипы под экраны или наружную рекламу. Работаем под ТЗ или "под ключ".
     </div>
@@ -396,7 +409,7 @@
 
 </div>
 
-<button class="order-button" onclick="goToForm()">Заполнить форму заказа</button>
+<button class="buttons" onclick="goToForm()">Заполнить форму заказа</button>
 
 <script>
   document.querySelectorAll('.accordion-header').forEach(header => {
