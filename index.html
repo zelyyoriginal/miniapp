@@ -98,7 +98,7 @@
   }
 
   .section {
-    background-color: var(--tg-theme-secondary-bg-color, rgba(255,255,255,0.05));
+    background-color: var(--tg-theme-bg-color, rgba(81, 13, 145, 0.05));
     border-radius: 12px;
     padding: 16px;
     margin-bottom: 16px;
@@ -224,7 +224,9 @@
 
     
   </div>
-  <div id="syntaxPage">
+  <div id="syntaxPage" style="display: none;">
+   
+   <div class="section">
     <h1>Syntx AI — ваш умный помощник в Telegram</h1>
     <h4>В современном мире, где время — ценный ресурс, а задачи требуют быстрого и качественного выполнения, <strong>Telegram-бот Syntx AI</strong> становится настоящим помощником для всех, кто стремится к продуктивности. Этот многофункциональный инструмент объединяет более 40 нейросетей, позволяя создавать тексты, изображения, видео и аудио прямо в мессенджере.</h4>
     
@@ -242,12 +244,15 @@
         ></iframe>
        </div>
 
+  </div>
+  <div class="section">
   <h2>Как начать пользоваться Syntx AI</h2>
-  <ol>
-    <li><strong>Запустите бота:</strong> перейдите по ссылке в Telegram и нажмите <em>Start</em>.</li>
-     <div class="buttons">
+    <div class="buttons">
      <button onclick="openNewPage('https://t.me/syntxaibot?start=aff_416970005')"> SYNTAX AI </button>
     </div>
+
+  <ol>
+    <li><strong>Запустите бота:</strong> перейдите по ссылке в Telegram и нажмите <em>Start</em>.</li>
     <li><strong>Ознакомьтесь с интерфейсом:</strong> главное меню, обучающее видео и FAQ.</li>
     <li><strong>Выберите категорию:</strong> тексты, изображения, видео, аудио.</li>
     <li><strong>Настройте параметры:</strong> стиль текста, голос, нейросеть.</li>
@@ -287,7 +292,7 @@
   </ul>
   <h4>Тарифы начинаются от <strong>1900₽</strong> — дешевле, чем подписки на MidJourney или GPT.</h4>
   </div>
-
+</div>
 
 
 </body>
