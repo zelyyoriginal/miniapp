@@ -28,13 +28,15 @@
    const formUrl = `${formBaseUrl}?usp=pp_url&${entryId}=${encodeURIComponent(profileLink)}`;
    
    function goToForm(){
-    // window.location.href = formUrl;
-    window.open(formUrl,'_blank');
+    openNewPage(formUrl)
      
+    }
+    function openNewPage(url){
+         window.open(url,'_blank');
     }
 
     function showPage(pageId) {
-  const pages = ['mainPage', 'rewiewsPage'];
+  const pages = ['mainPage', 'rewiewsPage','syntaxPage'];
   pages.forEach(id => {
     document.getElementById(id).style.display = (id === pageId) ? 'block' : 'none';
   });

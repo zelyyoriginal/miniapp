@@ -11,8 +11,8 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--tg-theme-text-color, #fff);
-    background: var(--tg-theme-bg-color, linear-gradient(135deg, hsl(269, 85%, 43%), #2575fc));
+    color: var(--tg-theme-text-color, #000000);
+    background-color: var(--tg-theme-secondary-bg-color, rgba(255,255,255,0.05));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,7 +130,7 @@
 
 </head>
 <body>
-  <div id ='mainPage' class="section">
+  <div id ='mainPage'>
      <h1>Проводник в мир ИИ</h1>
      <p>Здесь вы можете оформить подписку, попробовать искусственный интеллект или заказать работу у мастера.</p>
      <hr>
@@ -139,14 +139,14 @@
 
     <div class="buttons">
      <button onclick="window.location.href='https://t.me/tribute/app?startapp=sjhh'">Приобрести подписку на канал</button>
-     <button onclick="window.location.href='syntax.html'">Попробовать ИИ</button>
+     <button onclick="showPage('syntaxPage')">Попробовать ИИ</button>
      <button onclick="showPage('rewiewsPage')">Отзывы, примеры работ</button>
      <button onclick="goToForm()"> Заказать работу мастера </button>
     </div>
   
   </div>
 
-  <div id='rewiewsPage' class="section" style="display: none;">
+  <div id='rewiewsPage' style="display: none;">
  <div class="video-container">
       <iframe
         width="720"
@@ -223,6 +223,69 @@
   </div>
 
     
+  </div>
+  <div id="syntaxPage">
+    <h1>Syntx AI — ваш умный помощник в Telegram</h1>
+    <h4>В современном мире, где время — ценный ресурс, а задачи требуют быстрого и качественного выполнения, <strong>Telegram-бот Syntx AI</strong> становится настоящим помощником для всех, кто стремится к продуктивности. Этот многофункциональный инструмент объединяет более 40 нейросетей, позволяя создавать тексты, изображения, видео и аудио прямо в мессенджере.</h4>
+    
+    <h2>Что такое Syntx AI и почему он уникален?</h2>
+    <h4>Syntx AI объединяет GPT-4o, MidJourney, DALL·E, Runway, Luma, Suno и другие нейросети. Не нужно регистрироваться на десятках платформ — всё работает прямо в Telegram. Поддерживаются текстовые, голосовые запросы и прикрепление изображений.</h4>
+    
+    <div class="video-container">
+        <iframe
+          width="720"
+          height="405"
+          src="https://vk.com/video_ext.php?oid=824561838&id=456239067&hash=233aa183b6de9cf0"
+          frameBorder="0"
+          allow="clipboard-write;"
+          allowFullScreen
+        ></iframe>
+       </div>
+
+  <h2>Как начать пользоваться Syntx AI</h2>
+  <ol>
+    <li><strong>Запустите бота:</strong> перейдите по ссылке в Telegram и нажмите <em>Start</em>.</li>
+     <div class="buttons">
+     <button onclick="openNewPage('https://t.me/syntxaibot?start=aff_416970005')"> SYNTAX AI </button>
+    </div>
+    <li><strong>Ознакомьтесь с интерфейсом:</strong> главное меню, обучающее видео и FAQ.</li>
+    <li><strong>Выберите категорию:</strong> тексты, изображения, видео, аудио.</li>
+    <li><strong>Настройте параметры:</strong> стиль текста, голос, нейросеть.</li>
+    <li><strong>Отправьте запрос:</strong> текст, фото или голосовое сообщение.</li>
+    <li><strong>Проверьте результат:</strong> и при необходимости уточните запрос.</li>
+    <li><strong>Сохраните результат:</strong> скачайте, отправьте или используйте в Telegram.</li>
+  </ol>
+
+  <h2>Преимущества Syntx AI</h2>
+  <ul>
+    <li><strong>Все нейросети в одном месте</strong> — более 40 ИИ без лишних подписок.</li>
+    <li><strong>Простота и доступность</strong> — Telegram, без VPN и сложных установок.</li>
+    <li><strong>Бесплатный старт</strong> — с бонусными токенами.</li>
+    <li><strong>Гибкость</strong> — работа с текстом, аудио, изображениями, видео.</li>
+    <li><strong>Скорость и качество</strong> — GPT-4o и другие передовые модели.</li>
+    <li><strong>Экономия ресурсов</strong> — автоматизация рутинных задач.</li>
+    <li><strong>Поддержка русского языка</strong> — без ошибок и костылей.</li>
+  </ul>
+
+  <h2>Кому подойдет Syntx AI?</h2>
+  <p>Этот бот — находка для:</p>
+  <ul>
+    <li>Маркетологов и SMM-специалистов</li>
+    <li>Блогеров и контент-креаторов</li>
+    <li>Предпринимателей</li>
+    <li>Студентов и преподавателей</li>
+    <li>Дизайнеров и креативщиков</li>
+  </ul>
+
+  <h2>Почему стоит оплатить тариф?</h2>
+  <p>Платная подписка дает:</p>
+  <ul>
+    <li>Неограниченные запросы</li>
+    <li>Приоритетную обработку</li>
+    <li>Доступ к новым функциям</li>
+    <li>Экономию времени и ресурсов</li>
+  </ul>
+  <h4>Тарифы начинаются от <strong>1900₽</strong> — дешевле, чем подписки на MidJourney или GPT.</h4>
   </div>
 
 
