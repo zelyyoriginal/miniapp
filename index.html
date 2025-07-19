@@ -132,6 +132,77 @@
 
     
 </style>
+ <style>
+
+  /* СТИЛИ РАСКРЫВАЮЩИХСЯ ОКОН*/
+  .accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .accordion-header {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 14px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .accordion-content {
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: none;
+    text-align: left;
+    font-size: 0.95em;
+  }
+
+  .accordion-header::after {
+    content: "▼";
+    transition: transform 0.3s;
+  }
+
+  .accordion-item.active .accordion-header::after {
+    transform: rotate(180deg);
+  }
+
+  .accordion-item.active .accordion-content {
+    display: block;
+  }
+
+  .order-button {
+    margin-top: 30px;
+    padding: 14px 24px;
+    background: #fff;
+    color: #2575fc;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .order-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+</style>
+
 
 </head>
 <body>
@@ -146,13 +217,13 @@
      <button onclick="window.location.href='https://t.me/tribute/app?startapp=sjhh'">Приобрести подписку на канал</button>
      <button onclick="showPage('syntaxPage')">Попробовать ИИ</button>
      <button onclick="showPage('rewiewsPage')">Отзывы, примеры работ</button>
-     <button onclick="goToForm()"> Заказать работу мастера </button>
+     <button onclick="showPage('servicesPage')"> Заказать работу мастера </button>
     </div>
   
   </div>
 
   <div id='rewiewsPage' style="display: none;">
- <div class="video-container">
+   <div class="video-container">
       <iframe
         width="720"
         height="405"
@@ -230,7 +301,7 @@
     
   </div>
   <div id="syntaxPage" style="display: none;">
-   
+ 
    <div class="section">
     <h1>Syntx AI — ваш умный помощник в Telegram</h1>
     <h4>В современном мире, где время — ценный ресурс, а задачи требуют быстрого и качественного выполнения, <strong>Telegram-бот Syntx AI</strong> становится настоящим помощником для всех, кто стремится к продуктивности. Этот многофункциональный инструмент объединяет более 40 нейросетей, позволяя создавать тексты, изображения, видео и аудио прямо в мессенджере.</h4>
@@ -238,18 +309,18 @@
     <h2>Что такое Syntx AI и почему он уникален?</h2>
     <h4>Syntx AI объединяет GPT-4o, MidJourney, DALL·E, Runway, Luma, Suno и другие нейросети. Не нужно регистрироваться на десятках платформ — всё работает прямо в Telegram. Поддерживаются текстовые, голосовые запросы и прикрепление изображений.</h4>
     
-    <div class="video-container">
-        <iframe
-          width="720"
-          height="405"
-          src="https://vk.com/video_ext.php?oid=824561838&id=456239067&hash=233aa183b6de9cf0"
-          frameBorder="0"
-          allow="clipboard-write;"
-          allowFullScreen
-        ></iframe>
-       </div>
-
+    
   </div>
+  <div class="video-container">
+      <iframe
+        width="720"
+        height="405"
+        src="https://vk.com/video_ext.php?oid=824561838&id=456239067&hash=233aa183b6de9cf0"
+        frameBorder="0"
+        allow="clipboard-write;"
+        allowFullScreen
+      ></iframe>
+     </div>
   <div class="section">
   <h2>Как начать пользоваться Syntx AI</h2>
     <div class="buttons">
@@ -297,8 +368,45 @@
   </ul>
   <h4>Тарифы начинаются от <strong>1900₽</strong> — дешевле, чем подписки на MidJourney или GPT.</h4>
   </div>
+
+</div>
+  <div id="servicesPage" style="display: none;">
+    <div class="accordion">
+
+  <div class="accordion-item">
+    <div class="accordion-header">1) Автоматизировать соцсети</div>
+    <div class="accordion-content">
+      Мы можем настроить воронку из Инстаграма в платный канал, автоответы на комментарии и сообщения.
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">2) Заказать поздравительный ролик</div>
+    <div class="accordion-content">
+      Яркий ролик по вашим фото и тексту, озвучка голосом или ИИ, быстрая доставка в любом формате.
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">3) Рекламный ролик на билборды</div>
+    <div class="accordion-content">
+      Короткие 30–60 сек. клипы под экраны или наружную рекламу. Работаем под ТЗ или "под ключ".
+    </div>
+  </div>
+
 </div>
 
+<button class="order-button" onclick="goToForm()">Заполнить форму заказа</button>
+
+<script>
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
+  </div>
 
 </body>
 </html>
