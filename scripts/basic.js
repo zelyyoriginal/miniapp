@@ -36,7 +36,7 @@
     }
 
     function showPage(pageId) {
-  const pages = ['mainPage', 'rewiewsPage','syntaxPage','servicesPage','chanalPageS'];
+  const pages = ['mainPage', 'rewiewsPage','syntaxPage','servicesPage','chanalPage'];
   pages.forEach(id => {
     document.getElementById(id).style.display = (id === pageId) ? 'block' : 'none';
   });
