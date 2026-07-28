@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+<meta name="theme-color" content="#ffffff">
 <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
 
 <title>Fullscreen Gallery</title>
@@ -39,6 +40,9 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
+/* safe area for notch devices */
+body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
 
 .section {
     position: relative;
@@ -135,7 +139,7 @@ body {
 
 <section class="section">
     <img src="images/photo0.1.jpg" alt="Фото 1">
-    <button class="button_info" onclick="window.location.href='https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713'">
+    <button class="button_info">
         <img src="images/pay.png" alt="Фотоinfo">
     </button>
 </section>
@@ -152,7 +156,7 @@ body {
 <div class="divider"></div>
 <section class="section">
     <img src="images/photo2.1.jpg" alt="Фото 2">
-    <button class="photo-button" onclick="window.location.href=">
+    <button class="photo-button" onclick="window.location.href='info.html'">
         <img src="images/Button.png" alt="Фотоpay">
     </button>
 </section>
@@ -174,4 +178,31 @@ body {
 
 
 </body>
+<script>
+    (function(){
+        const tg = window.Telegram && window.Telegram.WebApp;
+        if(!tg) return;
+        const payLink = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
+        try{ tg.expand(); }catch(e){}
+        try{
+            tg.MainButton.setText('Оплатить');
+            tg.MainButton.show();
+        }catch(e){}
+
+        // map native buttons to open payment link inside Telegram
+        document.querySelectorAll('.button_info, .photo-button').forEach(btn=>{
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
+                if (tg.openLink) tg.openLink(payLink);
+                else window.location.href = payLink;
+            });
+        });
+
+        tg.onEvent('mainButtonClicked', function(){
+            tg.sendData(JSON.stringify({action:'pay', link: payLink}));
+        });
+
+        tg.ready();
+    })();
+</script>
 </html>
