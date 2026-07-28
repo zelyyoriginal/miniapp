@@ -145,20 +145,25 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 </section>
 
 <script>
+    const tg = window.Telegram && window.Telegram.WebApp;
+    if (tg) {
+        try {
+            tg.BackButton.hide();
+        } catch (error) {
+            console.warn('Telegram WebApp BackButton hide failed', error);
+        }
+        tg.ready();
+    }
+
     const buttonInfo = document.querySelector('.button_info');
     buttonInfo.addEventListener('click', () => {
-        window.location.href = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
-        tg.BackButton.show();
-   
-   
+        const payUrl = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
+        if (tg && typeof tg.openLink === 'function') {
+            tg.openLink(payUrl);
+        } else {
+            window.location.href = payUrl;
+        }
     });
-   
-    const tg = window.Telegram && window.Telegram.WebApp;
-    tg.onEvent('backButtonClicked', () => {
-        window.location.href = 'index.html';
-      });
-    tg.ready();
-    
 </script>
 
 <div class="divider"></div>
