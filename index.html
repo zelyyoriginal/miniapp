@@ -139,7 +139,7 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 
 <section class="section">
     <img src="images/photo0.1.jpg" alt="Фото 1">
-    <button class="button_info">
+    <button class="button_info" onclick="window.location.href='https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713'">
         <img src="images/pay.png" alt="Фотоinfo">
     </button>
 </section>
@@ -178,31 +178,4 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 
 
 </body>
-<script>
-    (function(){
-        const tg = window.Telegram && window.Telegram.WebApp;
-        if(!tg) return;
-        const payLink = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
-        try{ tg.expand(); }catch(e){}
-        try{
-            tg.MainButton.setText('Оплатить');
-            tg.MainButton.show();
-        }catch(e){}
-
-        // map native buttons to open payment link inside Telegram
-        document.querySelectorAll('.button_info, .photo-button').forEach(btn=>{
-            btn.addEventListener('click', function(e){
-                e.preventDefault();
-                if (tg.openLink) tg.openLink(payLink);
-                else window.location.href = payLink;
-            });
-        });
-
-        tg.onEvent('mainButtonClicked', function(){
-            tg.sendData(JSON.stringify({action:'pay', link: payLink}));
-        });
-
-        tg.ready();
-    })();
-</script>
 </html>
