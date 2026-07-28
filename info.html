@@ -271,7 +271,7 @@
       }
 
       tg.onEvent('backButtonClicked', () => {
-        tg.sendData(JSON.stringify({ action: 'back' }));
+        window.location.href = 'index.html';
       });
 
       tg.ready();
