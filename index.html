@@ -139,11 +139,27 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 
 <section class="section">
     <img src="images/photo0.1.jpg" alt="Фото 1">
-    <button class="button_info" onclick="window.location.href='https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713'">
+    <button class="button_info">
         <img src="images/pay.png" alt="Фотоinfo">
     </button>
 </section>
 
+<script>
+    const buttonInfo = document.querySelector('.button_info');
+    buttonInfo.addEventListener('click', () => {
+        window.location.href = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
+        tg.BackButton.show();
+   
+   
+    });
+   
+    const tg = window.Telegram && window.Telegram.WebApp;
+    tg.onEvent('backButtonClicked', () => {
+        window.location.href = 'index.html';
+      });
+    tg.ready();
+    
+</script>
 
 <div class="divider"></div>
 <section class="section">
