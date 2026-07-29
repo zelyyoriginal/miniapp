@@ -130,7 +130,7 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 
     position: absolute;
     left: 47%;
-    top: 58%;
+    top: 47%;
     width: clamp(40px, 50%, 3000px);
     height: auto;
     background: transparent;
@@ -138,7 +138,7 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 }</style>
 
 <section class="section">
-    <img src="images/photo0.1.jpg" alt="Фото 1">
+    <img src="images/photo0.1.png" alt="Фото 1">
     <button class="button_info">
         <img src="images/pay.png" alt="Фотоinfo">
     </button>
@@ -156,6 +156,7 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
     }
 
     const buttonInfo = document.querySelector('.button_info');
+
     buttonInfo.addEventListener('click', () => {
         const payUrl = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
         if (tg && typeof tg.openLink === 'function') {
@@ -164,6 +165,9 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
             window.location.href = payUrl;
         }
     });
+
+
+
 </script>
 
 <div class="divider"></div>
@@ -191,6 +195,31 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 <section class="section">
     <img src="images/photo4.jpg" alt="Фото 4">
 </section>
+<div class="divider"></div>
+
+
+
+<style>
+.button41 {
+    position: absolute;
+    left: 22%;
+    top: 44%;
+    width: clamp(40px, 55%, 3000px);
+    height: auto;
+    background: transparent;
+    border: none;
+}
+</style>
+
+<section class="section">
+    <img src="images/photo4.1.jpg" alt="Фото 4">
+    <button class="button41" onclick="window.location.href='https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713'">
+        <img src="images/button4.1.png" alt="Фотоpay">
+    </button>
+</section>
+
+ 
+
 <div class="divider"></div>
 
 <section class="section">
