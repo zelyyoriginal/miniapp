@@ -144,31 +144,7 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
     </button>
 </section>
 
-<script>
-    const tg = window.Telegram && window.Telegram.WebApp;
-    if (tg) {
-        try {
-            tg.BackButton.hide();
-        } catch (error) {
-            console.warn('Telegram WebApp BackButton hide failed', error);
-        }
-        tg.ready();
-    }
 
-    const buttonInfo = document.querySelector('.button_info');
-
-    buttonInfo.addEventListener('click', () => {
-        const payUrl = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
-        if (tg && typeof tg.openLink === 'function') {
-            tg.openLink(payUrl);
-        } else {
-            window.location.href = payUrl;
-        }
-    });
-
-
-
-</script>
 
 <div class="divider"></div>
 <section class="section">
@@ -213,7 +189,7 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
 
 <section class="section">
     <img src="images/photo4.1.jpg" alt="Фото 4">
-    <button class="button41" onclick="window.location.href='https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713'">
+    <button class="button41">
         <img src="images/button4.1.png" alt="Фотоpay">
     </button>
 </section>
@@ -226,6 +202,35 @@ body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inse
     <img src="images/photo5.jpg" alt="Фото 5">
 </section>
 
+<script>
+    const tg = window.Telegram && window.Telegram.WebApp;
+    if (tg) {
+        try {
+            tg.BackButton.hide();
+        } catch (error) {
+            console.warn('Telegram WebApp BackButton hide failed', error);
+        }
+        tg.ready();
+    }
 
+    const buttonInfo = document.querySelector('.button_info');
+    const buttonInfo2 = document.querySelector('.button41');
+
+    buttonInfo.addEventListener('click', () => {
+       openPay();
+    });
+    buttonInfo2.addEventListener('click', () => {
+        openPay();
+    });
+
+  function openPay() {
+    const payUrl = 'https://link.payform.ru/?paymentLinkId=13d81b22-4ec6-4618-89f0-1d6641ef8713';
+        if (tg && typeof tg.openLink === 'function') {
+            tg.openLink(payUrl);
+        } else {
+            window.location.href = payUrl;
+        }
+    };
+</script>
 </body>
 </html>
